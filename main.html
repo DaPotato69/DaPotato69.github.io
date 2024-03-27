@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Ben Wang</title>
+</head>
+<body>
+    <div id="terminal"></div>
+    <div class="scanlines"></div>
+<script>
+
+function teal(message) {
+    return "[[gb;teal;black]" + message + "]";
+}
+$(function() {
+$('#terminal').terminal({
+    help: function() {
+        this.echo('\
+Available commands: \n \
+    [[b;#fff;]echo] - echo the input\n \
+    [[b;#fff;]help] - show help\n \
+    [[b;#fff;]about] - about me\n \
+    [[b;#fff;]contact] - contact me\n \
+    [[b;#fff;]resume] - view my resume\n \
+    [[b;#fff;]projects] - view my projects\n \
+    [[b;#fff;]skills] - view my skills\n \
+    [[b;#fff;]education] - view my education\n \
+    [[b;#fff;]experience] - view my experience\n \
+    [[b;#fff;]interests] - view my interests\n \
+    [[b;#fff;]exit] - exit the terminal');
+    },
+    echo: function(arg1) {
+        this.echo(arg1);
+    },
+    about: function() {
+        this.echo('I am a software engineer with a passion for building products that make a difference. I have experience in full-stack web development, mobile development, and machine learning. I am always looking for new opportunities to learn and grow.');
+    },
+    contact: function() {
+        this.echo('\
+Email: ben0358632@gmail.com\n\
+Github: github.com/DaPotato69\n\
+        ')
+    },
+    education: function() {
+        this.echo('\
+- [[b;#fff;]Radford College] \n\
+    2020 - Present \n\
+    Canberra, Australia')
+    },
+},
+{
+    greetings: "Welcome to\n \
+    ____                _       __                 _         \n \
+   / __ )___  ____     | |     / /___ _____  ____ ( )_____   \n \
+  / __  / _ \\/ __ \\    | | /| / / __ `/ __ \\/ __ `/// ___/  \n \
+ / /_/ /  __/ / / /    | |/ |/ / /_/ / / / / /_/ / (__  )  \n \
+/_____/\\___/_/ /_/     |__/|__/\\__,_/_/ /_/\\__, / /____/  \n \
+                                        /____/            \n \
+    ____             __  ____      ___      \n \
+   / __ \\____  _____/ /_/ __/___  / (_)___  \n \
+  / /_/ / __ \\/ ___/ __/ /_/ __ \\/ / / __ \\ \n \
+ / ____/ /_/ / /  / /_/ __/ /_/ / / / /_/ / \n \
+/_/    \\____/_/   \\__/_/  \\____/_/_/\\____/  \n \n\
+Type [[b;#fff;]help] to get started!",
+    prompt: '~:/$: '
+});
+});
+</script>
+</body>
+</html>
