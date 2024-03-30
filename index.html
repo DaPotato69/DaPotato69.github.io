@@ -15,10 +15,20 @@
 <body>
     <div id="terminal"></div>
     <div class="scanlines"></div>
+    <div class="warning" role="alert">
+        <a href="/BenWangResume.pdf">Show all</a>
+    </div>
 <script>
+$('a').on("click", function() {
+    console.log("Click event fired");
+})
+var resume = function() {
+    var url = $(".warning a").attr("href")
+    window.location = url;
+}
 
-function teal(message) {
-    return "[[gb;teal;black]" + message + "]";
+function bold(message) {
+    return "[[gb;#fff;]" + message + "]";
 }
 $(function() {
 $('#terminal').terminal({
@@ -74,7 +84,17 @@ I also like to build [[b;#ddd;]custom keyboards], particularly split ones.', kee
         this.clear();
     },
     projects: function() {
-        this.echo('');
+        this.echo('\
+- [[gb;#fff;]Clickr.news] - a keyboard blog website made with Flask\n\
+- [[gb;#fff;]Idiot12] - a fully functional keyboard with only 12 keys, and one alpha layer\n\
+- [[gb;#fff;]Into the Failureverse] - a prop hunt game made with Unreal Engine 5\n\
+- [[gb;#fff;]Will You Be My Valentine?] - a recreation of the popular meme website where the Yes button slowly fills the entire screen', keepWords=true);
+    },
+    resume: function() {
+        this.echo("\
+If you haven't been redirected, your browser does not support this terminal's features.\n\
+If you were redirected, then please enjoy reading my resume!", keepWords=true);
+resume();
     },
 },
 {
