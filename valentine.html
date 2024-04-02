@@ -60,7 +60,7 @@
 </head>
 <body>
     <div>
-        <img id="image" src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" height="300vh"/>
+        <img id="image" src="/resources/valentine1.gif" height="300vh"/>
         <p id="text" style="font-size: 2.5em;">Will you be my Valentine?</p>
         <div id="buttons">
             <input id="yes" onclick="yes()" type="button" value="Yes" style="font-size: 1em;"></input>
@@ -91,7 +91,7 @@
                 "No :(",
             ];
 
-            return phrases[Math.min(noCount, phrases.length - 1)];
+            return phrases[noCount % (phrases.length - 1)];
         };
         var noButton = document.getElementById("no");
         var yesButton = document.getElementById("yes");
