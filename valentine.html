@@ -86,14 +86,14 @@
                 "ok ur talking to my ghost",
                 "please babe",
                 ":((((",
-                "pooooooookie",
+                "my pookie bear :(",
                 "dont do this to me",
                 "PRETTY PLEASE",
                 "😭😭😭",
                 "Estoy muerto",
                 "No :(",
             ];
-
+            
             return phrases[noCount % (phrases.length - 1)];
         };
         var noButton = document.getElementById("no");
@@ -109,6 +109,11 @@
             yesButton.style.display = 'none';
             noButton.style.display = 'none';
         }
+        var scrollEventHandler = function() {
+            window.scroll(0, window.pageYOffset)
+        }
+
+        window.addEventListener("scroll", scrollEventHandler, false);
     </script>
 </body>
 </html>
