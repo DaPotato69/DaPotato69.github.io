@@ -101,14 +101,16 @@
         function no() {
             noCount++;
             noButton.value = getNoButtonText(noCount);
-            yesButton.style = "font-size: " + (noCount + 2) + "em;"
+            yesButton.style = "font-size: " + (noCount + 2) + "em;";
         }
         function yes() {
-            document.getElementById("text").innerHTML = "<strong>WOOOOOOO! I love you pookie <3</strong>"
-            document.getElementById("image").src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif"
+            document.getElementById("text").innerHTML = "<strong>WOOOOOOO! I love you pookie <3</strong>";
+            document.getElementById("image").src="/resources/valentine2.gif";
             yesButton.style.display = 'none';
             noButton.style.display = 'none';
         }
+
+        // Prevent horizontal scrolling
         var scrollEventHandler = function() {
             window.scroll(0, window.pageYOffset)
         }
