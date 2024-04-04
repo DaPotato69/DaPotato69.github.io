@@ -15,17 +15,16 @@
 <body>
     <div id="terminal"></div>
     <div class="scanlines"></div>
-    <div class="warning" role="alert">
+    <div class="warning1" role="alert">
         <a href="/resources/BenWangResume.pdf">Show all</a>
+    </div>
+    <div class="warning2" role="alert">
+        <a href="/valentine.html">Show all</a>
     </div>
 <script>
 $('a').on("click", function() {
     console.log("Click event fired");
 })
-var resume = function() {
-    var url = $(".warning a").attr("href")
-    window.location = url;
-}
 
 function bold(message) {
     return "[[gb;#fff;]" + message + "]";
@@ -94,7 +93,15 @@ I also like to build [[b;#ddd;]custom keyboards], particularly split ones.', kee
         this.echo("\
 If you haven't been redirected, your browser does not support this terminal's features.\n\
 If you were redirected, then please enjoy reading my resume!", keepWords=true);
-resume();
+    var url = $(".warning1 a").attr("href");
+    window.location = url;
+    },
+    valentine: function() {
+        this.echo("\
+If you haven't been redirected, your browser does not support this terminal's features.\n\
+If you were redirected, then please enjoy valentine.html!", keepWords=true);
+    var url = $(".warning2 a").attr("href");
+    window.location = url;
     },
 },
 {
